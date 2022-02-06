@@ -1,0 +1,22 @@
+<form>
+    <h1>Deletar Contato</h1>
+
+    <mat-form-field class="form">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="contact.name"  type="text" name="name" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Telefone</mat-label>
+        <input matInput [(ngModel)]="contact.phone"  type="text" name="phone" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="contact.email"  type="text" name="email" disabled>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="deleteContact()" class="mat-elevation-z8" mat-raised-button color="primary">DELETAR</button>
+        <button (click)="cancel()"  class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
+    </div>
+
+</form>
