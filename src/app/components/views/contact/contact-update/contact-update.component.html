@@ -2,15 +2,15 @@
     <h1>Atualizar Contato</h1>
 
     <mat-form-field class="form">
-        <mat-label>Nome</mat-label>
+        <mat-label>NOME</mat-label>
         <input matInput [(ngModel)]="contact.name" type="text" name="name" placeholder="">
     </mat-form-field>
     <mat-form-field class="form">
-        <mat-label>Telefone</mat-label>
-        <input matInput [(ngModel)]="contact.phone" type="text" name="phone" placeholder="(34)998815006">
+        <mat-label>TELEFONE</mat-label>
+        <input matInput mask="(00) 0-0000-0000" [(ngModel)]="contact.phone" type="text" name="phone"  placeholder="(34) 9-9881-5006" required>
     </mat-form-field>
     <mat-form-field class="form">
-        <mat-label>Email</mat-label>
+        <mat-label>EMAIL</mat-label>
         <input matInput [(ngModel)]="contact.email" type="text" name="email" placeholder="teste@email.com">
     </mat-form-field>
 

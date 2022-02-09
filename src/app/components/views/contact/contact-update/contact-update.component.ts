@@ -34,19 +34,20 @@ export class ContactUpdateComponent implements OnInit {
         this.contact.phone = response.phone;
         this.contact.email = response.email;
       },
-      error: (err) => {
+      error: () => {
       }
     })
   }
 
   updateContact():void{
     this.service.updateContact(this.contact).subscribe({
-      next: () => {
+      next: (response) => {
+        console.log(response);
         this.route.navigate(['contact']);
         this.service.messages(`Contato ID: ${this.contact.id} atualizado com sucesso!`);
       },
-      error: (err) => {
-        this.service.messages('Campos não podem ser vazios')
+      error: () => {
+        this.service.messages('Preenchimento dos campos invalidos')
       }
     })
   }

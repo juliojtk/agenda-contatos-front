@@ -11,12 +11,15 @@
 
 .title h1 {
   font-size: 2rem;
-  color: blue;
-  font-weight: 500;
+  color: rgb(103, 12, 189);
+  font-weight: 600;
+  margin-top: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 button {
   margin-bottom: 1rem;
+  border-radius: 5%;
 }
 
 .tableContact {

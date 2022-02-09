@@ -1,0 +1,47 @@
+.content {
+    width: 90%;
+    margin: 1, 4rem auto auto auto;
+    margin-left: 3rem;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .title h1 {
+    font-size: 2rem;
+    color: rgb(24, 24, 173);
+    font-weight: 600;
+    margin-top: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  button {
+    margin-bottom: 1rem;
+    border-radius: 5%;
+  }
+  
+  .tableContact {
+    width: 100%;
+    padding-left: 5rem;
+  }
+  
+  .math-header {
+    width: 5rem;
+  }
+  
+  .address {
+    margin-left: 1.3rem;
+    color: rgb(102, 180, 25);
+  }
+  
+  .edit {
+    color: rgb(18, 18, 179);
+  }
+  
+  .delete {
+    color: rgb(180, 22, 22);
+    margin-left: 0.8rem;
+  }
+  

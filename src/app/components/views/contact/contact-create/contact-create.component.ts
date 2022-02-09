@@ -17,6 +17,7 @@ export class ContactCreateComponent implements OnInit {
     email: ''
   }
 
+
   constructor(private service: ContactService, private route: Router) { }
 
   ngOnInit(): void {
@@ -39,5 +40,7 @@ export class ContactCreateComponent implements OnInit {
   cancelBtn(): void {
     this.route.navigate(['contact']);
   }
+
+  
 
 }

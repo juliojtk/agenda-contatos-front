@@ -1,0 +1,38 @@
+<form>
+    <h1>Deletar Endereço</h1>
+
+    <mat-form-field class="form">
+        <mat-label>CEP</mat-label>
+        <input matInput mask="00000-000" [(ngModel)]="address.cep" type="text" name="cep"  disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>RUA</mat-label>
+        <input matInput [(ngModel)]="address.street"  required type="text" name="street" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>BAIRRO</mat-label>
+        <input matInput [(ngModel)]="address.district"  required type="text" name="district" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>NUMERO</mat-label>
+        <input matInput [(ngModel)]="address.number" required type="text" name="number" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>CIDADE</mat-label>
+        <input matInput [(ngModel)]="address.city" type="text" name="city" disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>ESTADO</mat-label>
+        <input matInput [(ngModel)]="address.state" type="text" name="state"  disabled>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>TIPO IMOVEL</mat-label>
+        <input matInput [(ngModel)]="address.propertyType"  required type="text" name="propertyType" disabled>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="deleteAddress()" class="mat-elevation-z8" mat-raised-button color="primary">DELETAR</button>
+        <button (click)="cancelBtn()" class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
+    </div>
+
+</form>

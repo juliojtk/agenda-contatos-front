@@ -1,0 +1,54 @@
+<form>
+    <h1>Editar Endereço</h1>
+
+    <mat-form-field class="form">
+        <mat-label>CEP</mat-label>
+        <input matInput mask="00000-000" [(ngModel)]="address.cep" type="text" name="cep" placeholder="38700-100"
+            maxlength="11">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>RUA</mat-label>
+        <input matInput [(ngModel)]="address.street" [formControl]="street" required type="text" name="street"
+            placeholder="Rua dos teste" maxlength="100">
+        <mat-error *ngIf="street.invalid"> {{ getMsg() }} </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>BAIRRO</mat-label>
+        <input matInput [(ngModel)]="address.district" [formControl]="district" required type="text" name="district"
+            placeholder="Santa Monica" maxlength="30">
+        <mat-error *ngIf="district.invalid"></mat-error>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>NUMERO</mat-label>
+        <input matInput mask="000000000" type="number" [(ngModel)]="address.number" [formControl]="number" required type="text"
+            name="number" placeholder="2230" maxlength="30">
+        <mat-error *ngIf="number.invalid"></mat-error>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>CIDADE</mat-label>
+        <input matInput [(ngModel)]="address.city" type="text" name="city" placeholder="Santa Catarina" maxlength="100">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>ESTADO</mat-label>
+        <mat-select [(value)]="address.state">
+            <mat-option *ngFor="let s of states" [value]="s.name">
+                {{s.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>TIPO IMOVEL</mat-label>
+        <mat-select [(value)]="address.propertyType">
+            <mat-option *ngFor="let t of types" [value]="t.name">
+                {{t.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="buttons">
+        <button (click)="updateAddress()" [disabled]="getMsg()" class="mat-elevation-z8" mat-raised-button
+            color="primary">EDITAR</button>
+        <button (click)="cancelBtn()" class="mat-elevation-z8" mat-raised-button color="warn">CANCELAR</button>
+    </div>
+
+</form>

@@ -3,6 +3,11 @@
   margin: 1rem auto;
 }
 
+img{
+  opacity: 0.4;
+  border-radius: 15%;
+}
+
 @media (max-witdh: 395px) {
     .home {
       width: 70%;
