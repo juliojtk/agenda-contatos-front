@@ -16,23 +16,23 @@ export class AddressReadAllComponent implements AfterViewInit {
   displayedColumns: string[] = ['id', 'cep', 'street', 'district', 'number', 'city', 'state', 'propertyType', 'actions'];
 
   id_cont: String = ''
-  
+
   dataSource = new MatTableDataSource<Address>(this.address);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private service: AddressService, 
+    private service: AddressService,
     private routeAct: ActivatedRoute,
     private router: Router,
-    ) { }
+  ) { }
 
   ngAfterViewInit() {
     this.id_cont = this.routeAct.snapshot.paramMap.get('id_cont')!
     this.findAll();
   }
 
-  findAll(): void{
+  findAll(): void {
     this.service.findAllAddressByContact(this.id_cont).subscribe({
       next: (response) => {
         this.address = response;
@@ -42,7 +42,7 @@ export class AddressReadAllComponent implements AfterViewInit {
     })
   }
 
-  goToCreateAddress(): void{
+  goToCreateAddress(): void {
     this.router.navigate([`contact/${this.id_cont}/address/create`])
   }
 }

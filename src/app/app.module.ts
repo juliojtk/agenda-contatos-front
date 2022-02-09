@@ -6,6 +6,16 @@ import { NgxMaskModule } from 'ngx-mask'
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,18 +31,6 @@ import { ContactDeleteComponent } from './components/views/contact/contact-delet
 import { ContactUpdateComponent } from './components/views/contact/contact-update/contact-update.component';
 import { AddressReadAllComponent } from './components/views/address/address-read-all/address-read-all.component';
 import { AddressCreateComponent } from './components/views/address/address-create/address-create.component';
-
-
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AddressUpdateComponent } from './components/views/address/address-update/address-update.component';
 import { AddressDeleteComponent } from './components/views/address/address-delete/address-delete.component';
 

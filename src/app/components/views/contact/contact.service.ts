@@ -10,6 +10,7 @@ import { Contact } from './contaact.model';
 })
 export class ContactService {
 
+  // Pegando a url Base
   baseUrl: String = environment.baseUrl;
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
@@ -27,7 +28,6 @@ export class ContactService {
   deleteContact(id: String): Observable<void> {
     const url = `${this.baseUrl}/contact/${id}`;
     return this.http.delete<void>(url);
-
   }
 
   updateContact(contact: Contact): Observable<void> {
@@ -44,7 +44,7 @@ export class ContactService {
     this._snack.open(`${str}`, 'OK', {
       horizontalPosition: 'end',
       verticalPosition: 'top',
-      duration: 4000
+      duration: 5000
     })
   }
 

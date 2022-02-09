@@ -20,7 +20,7 @@
     </mat-form-field>
     <mat-form-field class="form">
         <mat-label>NUMERO</mat-label>
-        <input matInput mask="000000000" type="number" [(ngModel)]="address.number" [formControl]="number" required type="text"
+        <input matInput type="number" [(ngModel)]="address.number" [formControl]="number" required type="number"
             name="number" placeholder="2230" maxlength="30">
         <mat-error *ngIf="number.invalid"></mat-error>
     </mat-form-field>

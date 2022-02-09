@@ -44,15 +44,15 @@ export class AddressDeleteComponent implements OnInit {
   }
 
   deleteAddress(): void {
-  this.service.deleteAddress(this.address.id!).subscribe({
-    next: () => {
-      this.route.navigate([`contact/${this.id_cont}/address`]);
-      this.service.messages('Enredeço deletado com sucesso!');
-    },
-    error: () => {
-      this.service.messages('Falha ao deletar endereço');
-    },
-  })
+    this.service.deleteAddress(this.address.id!).subscribe({
+      next: () => {
+        this.route.navigate([`contact/${this.id_cont}/address`]);
+        this.service.messages('Enredeço deletado com sucesso!');
+      },
+      error: () => {
+        this.service.messages('Falha ao deletar endereço');
+      },
+    })
   }
 
   cancelBtn(): void {

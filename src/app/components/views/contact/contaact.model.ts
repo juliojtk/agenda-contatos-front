@@ -1,4 +1,4 @@
-export interface Contact{
+export interface Contact {
     id?: String;
     name: String;
     phone: String;

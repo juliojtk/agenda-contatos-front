@@ -20,11 +20,9 @@ export class ContactUpdateComponent implements OnInit {
   constructor(private service: ContactService, private routeAct: ActivatedRoute, private route: Router) { }
 
   ngOnInit(): void {
-
     // Recuperando o id que esta passando na url
     this.contact.id = this.routeAct.snapshot.paramMap.get('id')!;
     this.findById();
-
   }
 
   findById(): void {
@@ -39,7 +37,7 @@ export class ContactUpdateComponent implements OnInit {
     })
   }
 
-  updateContact():void{
+  updateContact(): void {
     this.service.updateContact(this.contact).subscribe({
       next: (response) => {
         console.log(response);
@@ -52,7 +50,7 @@ export class ContactUpdateComponent implements OnInit {
     })
   }
 
-  cancel(): void{
+  cancel(): void {
     this.route.navigate(['contact']);
   }
 

@@ -12,6 +12,8 @@ import { AddressService } from '../address.service';
 export class AddressUpdateComponent implements OnInit {
 
   id_cont: String = '';
+  states: any[] = [];
+  types: any[] = [];
 
   address: Address = {
     id: '',
@@ -23,46 +25,6 @@ export class AddressUpdateComponent implements OnInit {
     state: '',
     propertyType: '',
   }
-
-  types: any[] = [
-    { name: 'Casa' },
-    { name: 'Apartamento' },
-    { name: 'Comercio' },
-    { name: 'Chacara' },
-    { name: 'Fazenda' },
-    { name: 'Barracao' },
-    { name: 'Lote' },
-];
-
-states: any = [
-  {name: 'Acre - AC'},
-  {name: 'Alagoas - AL'},
-  {name: 'Amapá - AP'},
-  {name: 'Amazonas - AM'},
-  {name: 'Bahia - BA'},
-  {name: 'Ceará - CE'},
-  {name: 'Espírito Santo - ES'},
-  {name: 'Goiás - GO'},
-  {name: 'Maranhão - MA'},
-  {name: 'Mato Grosso - MT'},
-  {name: 'Mato Grosso do Sul - MS'},
-  {name: 'Minas Gerais - MG'},
-  {name: 'Pará - PA'},
-  {name: 'Paraíba - PB'},
-  {name: 'Paraná - PR'},
-  {name: 'Pernambuco - PE'},
-  {name: 'Piauí - PI'},
-  {name: 'Rio de Janairo - RJ'},
-  {name: 'Rio Grande do Norte - RN'},
-  {name: 'Rio Grande do Sul - RS'},
-  {name: 'Rondônia - RO'},
-  {name: 'Roraima - RR'},
-  {name: 'Santa Catarina - SC'},
-  {name: 'São Paulo - SP'},
-  {name: 'Sergipe - SE'},
-  {name: 'Tocantins - TO'},
-  {name: 'Distrito Federal - DF'},
-]
 
   street = new FormControl('', [Validators.minLength(1)]);
   district = new FormControl('', [Validators.minLength(1)]);
@@ -77,6 +39,8 @@ states: any = [
   ngOnInit(): void {
     this.id_cont = this.routeAct.snapshot.paramMap.get('id_cont')!;
     this.address.id = this.routeAct.snapshot.paramMap.get('id_adress')!;
+    this.states = this.service.states;
+    this.types = this.service.types;
     this.findById();
   }
 
@@ -97,7 +61,7 @@ states: any = [
       },
       error: () => {
         this.route.navigate([`contact/${this.id_cont}/address`]);
-        this.service.messages(`Erro ao Atualizar Endereço ${this.address.id}`);
+        this.service.messages(`Erro ao Atualizar Endereço ${this.address.id}, Verifique tamanho de caracteres do numero`);
       }
     })
   }
@@ -109,9 +73,9 @@ states: any = [
   getMsg() {
     if (this.street.invalid) {
       return "O campo RUA deve ter de 1 a 150 caracteres"
-    }else if(this.district.invalid){
+    } else if (this.district.invalid) {
       return "Campo Bairro é obrigatorio"
-    }else if (this.number.invalid) {
+    } else if (this.number.invalid) {
       return "Campo NUMERO é obrigatorio"
     }
     return false;

@@ -12,23 +12,23 @@ import { HomeComponent } from './components/views/home/home.component';
 
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: HomeComponent
   },
   {
-    path: 'contact', 
+    path: 'contact',
     component: ContactReadComponent
   },
   {
-    path: 'contact/create', 
+    path: 'contact/create',
     component: ContactCreateComponent
   },
   {
-    path: 'contact/update/:id', 
+    path: 'contact/update/:id',
     component: ContactUpdateComponent
   },
   {
-    path: 'contact/delete/:id', 
+    path: 'contact/delete/:id',
     component: ContactDeleteComponent
   },
   {

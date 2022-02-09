@@ -12,6 +12,46 @@ export class AddressService {
 
   baseUrl: String = environment.baseUrl;
 
+  states: any = [
+    { name: 'Acre - AC' },
+    { name: 'Alagoas - AL' },
+    { name: 'Amapá - AP' },
+    { name: 'Amazonas - AM' },
+    { name: 'Bahia - BA' },
+    { name: 'Ceará - CE' },
+    { name: 'Espírito Santo - ES' },
+    { name: 'Goiás - GO' },
+    { name: 'Maranhão - MA' },
+    { name: 'Mato Grosso - MT' },
+    { name: 'Mato Grosso do Sul - MS' },
+    { name: 'Minas Gerais - MG' },
+    { name: 'Pará - PA' },
+    { name: 'Paraíba - PB' },
+    { name: 'Paraná - PR' },
+    { name: 'Pernambuco - PE' },
+    { name: 'Piauí - PI' },
+    { name: 'Rio de Janairo - RJ' },
+    { name: 'Rio Grande do Norte - RN' },
+    { name: 'Rio Grande do Sul - RS' },
+    { name: 'Rondônia - RO' },
+    { name: 'Roraima - RR' },
+    { name: 'Santa Catarina - SC' },
+    { name: 'São Paulo - SP' },
+    { name: 'Sergipe - SE' },
+    { name: 'Tocantins - TO' },
+    { name: 'Distrito Federal - DF' },
+  ]
+
+  types: any[] = [
+    { name: 'Casa' },
+    { name: 'Apartamento' },
+    { name: 'Comercio' },
+    { name: 'Chacara' },
+    { name: 'Fazenda' },
+    { name: 'Barracao' },
+    { name: 'Lote' },
+  ];
+
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
   findAllAddressByContact(id_cont: String): Observable<Address[]> {

@@ -48,5 +48,4 @@ export class ContactReadComponent implements AfterViewInit {
     this.route.navigate(['contact/create']);
   }
 
-
 }
